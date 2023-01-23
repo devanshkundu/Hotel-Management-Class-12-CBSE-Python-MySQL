@@ -1,11 +1,16 @@
 import mysql.connector
 
+#Enter your MySql connectivity credentials 
+hst="localhost"
+usr="root"
+psd="12345678"
+
 # Create Database Function
 def create_database():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678")
+    host=hst,
+    user=usr,
+    password=psd)
     
     try:
        mycursor = mydb.cursor()
@@ -45,13 +50,6 @@ def home():
 
 # Room Information Menu Function
 def room():
-    mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
-    database="hotel")
-    
-    mycursor = mydb.cursor()
     
     print('\t\t\t\t\t\t Edit Room Info\n')
     print('-'*100)
@@ -105,9 +103,9 @@ def room():
 # Create Table roominfo Function
 def create_roominfo():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
 
     try:
@@ -119,9 +117,9 @@ def create_roominfo():
 # Add Room Infomation Function     
 def add_room():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
     mycursor = mydb.cursor()
     print('\t\t\t\t\t\t Add New Room ')
@@ -145,9 +143,9 @@ def add_room():
 # Show Room Information Function 
 def show_room():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
     mycursor = mydb.cursor()
     mycursor.execute('SELECT * FROM roominfo')
@@ -164,9 +162,9 @@ def show_room():
 # Update Room Information Function
 def update_room():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
     try:
        mycursor = mydb.cursor()
@@ -201,9 +199,9 @@ def update_room():
 # Update Room Status Function    
 def update_roomstatus():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
 
     mycursor = mydb.cursor()
@@ -229,9 +227,9 @@ def update_roomstatus():
 # Drop roominfo Table
 def drop_roominfo():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
     
     mycursor = mydb.cursor()
@@ -290,9 +288,9 @@ def employees():
 # Create Employees Information Function
 def create_empinfo():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
     mycursor = mydb.cursor()
     try:
@@ -306,9 +304,9 @@ def create_empinfo():
 # Add Employees Information Function
 def add_empinfo():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
     mycursor = mydb.cursor()
     print('\t\t\t\t\t\t Add New Room ')
@@ -334,9 +332,9 @@ def add_empinfo():
 # Drop empinfo Table Function    
 def drop_empinfo():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
 
     try :
@@ -353,13 +351,13 @@ def drop_empinfo():
 # Show Employees Information Function
 def show_empinfo():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
     mycursor = mydb.cursor()
     mycursor.execute('SELECT * FROM empinfo')
-    print('\t\t\t\t\t\t Room Info ')
+    print('\t\t\t\t\t\t Employees Infomation ')
     print('-'*100)
 
     myresult = mycursor.fetchall()
@@ -372,9 +370,9 @@ def show_empinfo():
 # Update Employees Information Functions
 def update_empinfo():
     mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="12345678",
+    host=hst,
+    user=usr,
+    password=psd,
     database="hotel")
 
     mycursor = mydb.cursor()
@@ -406,14 +404,3 @@ def update_empinfo():
     employees()
 
 home()
-
-
-
-
-           
-        
-
-        
-
-
-        
